@@ -1,7 +1,10 @@
+import 'package:flutter/cupertino.dart';
+import 'package:food_for_all/dummy_data.dart';
+
 import 'offer.dart';
 
 class Hotel {
-  final hotelId;
+  final String hotelId;
   final String name;
   final String address;
   double totalFundsRaised;
@@ -20,4 +23,12 @@ class Hotel {
     this.pointsPerDonation,
     this.hotelId,
   });
+}
+
+class HotelsProvider with ChangeNotifier {
+  List<Hotel> _hotels = dummyHotelsList;
+
+  List<Hotel> get hotels {
+    return [..._hotels];
+  }
 }

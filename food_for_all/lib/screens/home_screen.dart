@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:food_for_all/models/hotel.dart';
 import 'package:food_for_all/screens/profile_page.dart';
 import 'package:food_for_all/widgets/detail_card.dart';
 import 'package:food_for_all/widgets/hotel_card.dart';
+import 'package:provider/provider.dart';
 import '../widgets/search_button.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var _hotels = Provider.of<HotelsProvider>(context).hotels;
     return Scaffold(
         body: SafeArea(
       child: Column(
@@ -52,12 +55,12 @@ class HomeScreen extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: 10,
+              itemCount: _hotels.length,
               itemBuilder: (context, index) {
                 return HotelCard(
-                  name: 'Restaurant XYZ',
-                  address: 'Sector 35-C, Chandigarh',
-                  currentFunds: 500,
+                  name: _hotels[index].name,
+                  address: _hotels[index].address,
+                  currentFunds: _hotels[index].currentFunds,
                 );
               },
             ),
