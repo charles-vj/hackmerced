@@ -12,6 +12,7 @@ class Hotel {
   int mealsServed;
   final int pointsPerDonation;
   List<Offer> currentOffers;
+  final String imageUrl;
 
   Hotel({
     this.name,
@@ -22,6 +23,7 @@ class Hotel {
     this.mealsServed,
     this.pointsPerDonation,
     this.hotelId,
+    this.imageUrl
   });
 }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_for_all/models/hotel.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import '../widgets/sliding_card.dart';
 
@@ -7,10 +8,13 @@ class HotelDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Map<String,dynamic> args = ModalRoute.of(context).settings.arguments;
+    print(args["hotel"]);
     return Scaffold(
       floatingActionButton: SizedBox(
         height: 60,
         child: FloatingActionButton.extended(
+          backgroundColor: Colors.black87,
           label: Row(
             children: [
               Text(
@@ -27,7 +31,7 @@ class HotelDetailsScreen extends StatelessWidget {
                 child: Icon(
                   Icons.chevron_right,
                   size: 30,
-                  color: Theme.of(context).primaryColor,
+                  color: Colors.black,
                 ),
               ),
             ],
@@ -39,9 +43,9 @@ class HotelDetailsScreen extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       body: SafeArea(
         child: SlidingUpPanel(
-          panel: SlidingCard(),
+          panel: SlidingCard(hotelDetail:args["hotel"]),
           minHeight: MediaQuery.of(context).size.height * 0.51,
-          maxHeight: MediaQuery.of(context).size.height * 0.75,
+          maxHeight: MediaQuery.of(context).size.height * 0.85,
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(35), topRight: Radius.circular(35)),
           body: Column(
@@ -53,9 +57,9 @@ class HotelDetailsScreen extends StatelessWidget {
                     width: double.infinity,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        fit: BoxFit.fill,
+                        fit: BoxFit.cover,
                         image: NetworkImage(
-                          'https://media-cdn.tripadvisor.com/media/photo-s/1a/18/3a/cb/restaurant-le-47.jpg',
+                          args["hotel"].imageUrl,
                         ),
                       ),
                     ),

@@ -58,9 +58,7 @@ class HomeScreen extends StatelessWidget {
               itemCount: _hotels.length,
               itemBuilder: (context, index) {
                 return HotelCard(
-                  name: _hotels[index].name,
-                  address: _hotels[index].address,
-                  currentFunds: _hotels[index].currentFunds,
+                  hotel: _hotels[index],
                 );
               },
             ),
