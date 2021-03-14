@@ -4,7 +4,7 @@ import '../widgets/profie_avatar.dart';
 import '../widgets/profile_detail_widget.dart';
 
 class ProfilePage extends StatelessWidget {
-  static const routeName = 'profile-page';
+  static const routeName = '/profile-page';
 
   final String name = "Andrew";
   final String about =

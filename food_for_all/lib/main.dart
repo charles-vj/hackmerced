@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_for_all/screens/hotel_details_screen.dart';
 import 'package:food_for_all/screens/profile_page.dart';
 import 'screens/home_screen.dart';
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => HomeScreen(),
         ProfilePage.routeName: (context) => ProfilePage(),
+        HotelDetailsScreen.routeName: (context) => HotelDetailsScreen(),
       },
     );
   }

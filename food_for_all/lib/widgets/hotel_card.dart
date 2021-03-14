@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../screens/hotel_details_screen.dart';
 
 class HotelCard extends StatelessWidget {
   final String name;
@@ -12,7 +13,7 @@ class HotelCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 30),
       child: InkWell(
-        onTap: () {},
+        onTap: () => Navigator.of(context).pushNamed(HotelDetailsScreen.routeName),
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
