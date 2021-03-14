@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_for_all/screens/profile_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Text("HELLO"),
+      home: Text("Hello"),
     );
   }
 }
