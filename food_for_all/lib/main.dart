@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_for_all/models/hotel.dart';
+import 'package:food_for_all/screens/donation_page.dart';
 import 'package:food_for_all/screens/hotel_details_screen.dart';
 import 'package:food_for_all/screens/profile_page.dart';
 import 'package:provider/provider.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
           '/': (context) => HomeScreen(),
           ProfilePage.routeName: (context) => ProfilePage(),
           HotelDetailsScreen.routeName: (context) => HotelDetailsScreen(),
+          DonationsPage.routeName: (context) => DonationsPage(),
         },
       ),
     );
