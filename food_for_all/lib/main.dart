@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_for_all/screens/profile_page.dart';
 import 'screens/home_screen.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -12,7 +14,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      routes: {
+        '/': (context) => HomeScreen(),
+        ProfilePage.routeName: (context) => ProfilePage(),
+      },
     );
   }
 }
